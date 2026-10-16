@@ -1,6 +1,6 @@
 # Enterprise IT Support Agentic RAG Copilot
 
-An end-to-end **Forward Deployed Engineer (FDE) project** that turns a notebook-style Agentic RAG workflow into a deployable internal product using **LangGraph, FastAPI, Pinecone, Groq, Tavily, HTML, CSS, and JavaScript**.
+An end-to-end **Forward Deployed Engineer (FDE) project** that turns a notebook-style Agentic RAG workflow into a deployable internal product using **LangGraph, FastAPI, Pinecone, OpenAI, Tavily, HTML, CSS, and JavaScript**.
 
 ---
 
@@ -111,7 +111,7 @@ This repository demonstrates each layer.
                └──────────────┬──────────────┘
                               ▼
                      ┌────────────────┐
-                     │ Groq LLM       │
+                     │ OpenAI LLM     │
                      │ Grounded Answer│
                      └────────────────┘
 ```
@@ -185,8 +185,8 @@ The system therefore controls **what to do next** based on its current state.
 | Layer | Technology | Purpose |
 |---|---|---|
 | Agent workflow | LangGraph | Stateful routing and conditional decisions |
-| LLM | Groq | Routing, grading, rewriting, answer generation |
-| Embeddings | HuggingFace `all-MiniLM-L6-v2` | Local 384-dimensional embeddings |
+| LLM | OpenAI (`gpt-4o-mini`) | Routing, grading, rewriting, answer generation |
+| Embeddings | OpenAI `text-embedding-3-small` | 1536-dimensional embeddings |
 | Vector DB | Pinecone | Private enterprise knowledge base |
 | External search | Tavily | Fallback when company KB is insufficient |
 | API | FastAPI | Backend and REST endpoints |
@@ -277,8 +277,7 @@ pip install -r requirements.txt
 Create a `.env` file in the project root directory with the following variables:
 
 ```env
-# LLM API Keys
-GROQ_API_KEY=your_groq_api_key_here
+# LLM + Embeddings
 OPENAI_API_KEY=your_openai_api_key_here
 
 # External Search
@@ -289,8 +288,7 @@ PINECONE_API_KEY=your_pinecone_api_key_here
 PINECONE_INDEX_NAME=fde-it-support-rag
 PINECONE_NAMESPACE=company-it-kb
 
-# LLM Models
-GROQ_MODEL=openai/gpt-oss-20b
+# Models
 OPENAI_MODEL=gpt-4o-mini
 EMBEDDING_MODEL=text-embedding-3-small
 
@@ -305,13 +303,11 @@ APP_ENV=development
 
 | Variable | Description | Example | Required |
 |---|---|---|---|
-| `GROQ_API_KEY` | API key for Groq LLM (routing, grading, generation) | `gsk_...` | ✅ Yes |
-| `OPENAI_API_KEY` | API key for OpenAI (embeddings and fallback LLM) | `sk-...` | ✅ Yes |
+| `OPENAI_API_KEY` | API key for OpenAI (chat model and embeddings) | `sk-...` | ✅ Yes |
 | `TAVILY_API_KEY` | API key for Tavily web search | `tvly-...` | ✅ Yes |
 | `PINECONE_API_KEY` | API key for Pinecone vector database | `pckey-...` | ✅ Yes |
 | `PINECONE_INDEX_NAME` | Pinecone index name | `fde-it-support-rag` | ⚠️ Optional (default: `fde-it-support-rag`) |
 | `PINECONE_NAMESPACE` | Pinecone namespace for document isolation | `company-it-kb` | ⚠️ Optional (default: `company-it-kb`) |
-| `GROQ_MODEL` | Groq model identifier | `openai/gpt-oss-20b` | ⚠️ Optional (default: `openai/gpt-oss-20b`) |
 | `OPENAI_MODEL` | OpenAI model identifier | `gpt-4o-mini` | ⚠️ Optional (default: `gpt-4o-mini`) |
 | `EMBEDDING_MODEL` | Embedding model for vectorization | `text-embedding-3-small` | ⚠️ Optional (default: `text-embedding-3-small`) |
 | `ADMIN_API_KEY` | Secret key for admin endpoints (document ingestion) | `your-secure-key` | ⚠️ Optional (default: `change-me`) |
@@ -319,12 +315,16 @@ APP_ENV=development
 
 **⚠️ Important Security Notes:**
 
-- Never commit `.env` to version control. Add it to `.gitignore`.
+- Never commit `.env` to version control. It is already listed in `.gitignore`.
+- A ready-made template is provided: copy `.env.example` to `.env` and fill in your keys.
+- The Pinecone index is created automatically on first use (1536 dimensions, cosine). If an index with the same name already exists with a different dimension, it is deleted and recreated, so use a dedicated index name.
 - Change `ADMIN_API_KEY` to a secure random value in production.
 - Use environment variables instead of hardcoding secrets.
 - Restrict API key access to only the services that need them.
 
 ### Step 4 — Load sample company knowledge
+
+> Requires valid `OPENAI_API_KEY` and `PINECONE_API_KEY` in `.env`.
 
 ```bash
 python ingest_sample_kb.py
@@ -339,7 +339,7 @@ Load Documents
    ↓
 Chunk Text
    ↓
-HuggingFace Embeddings
+OpenAI Embeddings
    ↓
 Pinecone Vector Database
 ```
@@ -353,13 +353,13 @@ python run.py
 Open:
 
 ```text
-http://127.0.0.1:8000
+http://127.0.0.1:8080
 ```
 
 FastAPI API docs:
 
 ```text
-http://127.0.0.1:8000/docs
+http://127.0.0.1:8080/docs
 ```
 
 ---
@@ -541,3 +541,13 @@ Uploads a document and adds its chunks to Pinecone.
 
 ---
 
+---
+
+## 11. Running the tests
+
+```bash
+pip install pytest
+pytest -q
+```
+
+The tests cover document loading and chunking (`tests/test_ingestion.py`) and need no API keys.
