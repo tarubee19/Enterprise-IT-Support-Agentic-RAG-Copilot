@@ -15,6 +15,11 @@ class Settings(BaseSettings):
     embedding_model: str = "text-embedding-3-small"
     openai_model: str = "gpt-4o-mini"
     top_k: int = 4
+    # "hybrid" = BM25 + dense fused with reciprocal-rank fusion; "dense" = Pinecone only.
+    # Chosen from the labelled retrieval evaluation, see eval/README.md.
+    retrieval_mode: str = "hybrid"
+    retrieval_candidates: int = 20
+    chunk_store_path: str = str(BASE_DIR / "data" / "chunks.jsonl")
     max_retries: int = 1
     admin_api_key: str = "change-me"
     audit_db_path: str = str(BASE_DIR / "data" / "audit.db")
