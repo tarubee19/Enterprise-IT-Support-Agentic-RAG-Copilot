@@ -1,0 +1,1327 @@
+{
+  "corpus": {
+    "documents": 244,
+    "characters": 1483885,
+    "chunks_at_900": 2286
+  },
+  "n_in_scope": 76,
+  "n_out_of_scope": 20,
+  "chunking": {
+    "300": {
+      "chunks": 7451,
+      "BM25": 0.5394736842105263,
+      "bge-small-en-v1.5": 0.7368421052631579
+    },
+    "300 +headers": {
+      "chunks": 6643,
+      "BM25": 0.6052631578947368,
+      "bge-small-en-v1.5": 0.75
+    },
+    "600": {
+      "chunks": 3543,
+      "BM25": 0.6447368421052632,
+      "bge-small-en-v1.5": 0.8026315789473685
+    },
+    "600 +headers": {
+      "chunks": 3566,
+      "BM25": 0.6578947368421053,
+      "bge-small-en-v1.5": 0.8289473684210527
+    },
+    "900": {
+      "chunks": 2284,
+      "BM25": 0.6710526315789473,
+      "bge-small-en-v1.5": 0.8289473684210527
+    },
+    "900 +headers": {
+      "chunks": 2669,
+      "BM25": 0.6842105263157895,
+      "bge-small-en-v1.5": 0.8947368421052632
+    },
+    "1500": {
+      "chunks": 1319,
+      "BM25": 0.7894736842105263,
+      "bge-small-en-v1.5": 0.8026315789473685
+    },
+    "1500 +headers": {
+      "chunks": 2084,
+      "BM25": 0.6973684210526315,
+      "bge-small-en-v1.5": 0.8947368421052632
+    }
+  },
+  "retrievers": {
+    "BM25": {
+      "hit1": {
+        "mean": 0.5526315789473685,
+        "ci95": [
+          0.4473684210526316,
+          0.6578947368421053
+        ]
+      },
+      "hit4": {
+        "mean": 0.6710526315789473,
+        "ci95": [
+          0.5657894736842105,
+          0.7763157894736842
+        ]
+      },
+      "mrr": {
+        "mean": 0.6042763157894736,
+        "ci95": [
+          0.5039418859649123,
+          0.7047341008771929
+        ]
+      },
+      "ndcg": {
+        "mean": 0.6267710533713288,
+        "ci95": [
+          0.5313734463860065,
+          0.7254674480169212
+        ]
+      },
+      "hit4_lexical": 0.9117647058823529,
+      "hit4_paraphrase": 0.47619047619047616,
+      "latency_ms_per_query": 4.861844213385331,
+      "misses_at_4": [
+        {
+          "q": "What is the minimum password length at NovaRetail?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "sample_kb/company_it_handbook.md"
+        },
+        {
+          "q": "I typed my password wrong several times and now I can't get in. Why?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/conflict-feedback-receiving-feedback.md"
+        },
+        {
+          "q": "Can I use text messages as my second factor?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "hiring-staying-or-changing-jobs/resume.md"
+        },
+        {
+          "q": "Will IT give me admin rights so I can install an app that isn't in the catalogue?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/conflict-feedback-additional-frameworks.md"
+        },
+        {
+          "q": "I left my work notebook computer on the train. What do I do?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "travel-and-leave/travel-and-leave-policies/travel-guide-faq.md"
+        },
+        {
+          "q": "Lots of people suddenly can't get their mail, should we ask them to reinstall Outlook?",
+          "gold": "sample_kb/service_desk_runbook.md",
+          "top1": "18f/how-18f-works/research-guidelines.md"
+        },
+        {
+          "q": "How urgent is a request where one person is stuck but has a partial workaround?",
+          "gold": "sample_kb/service_desk_runbook.md",
+          "top1": "getting-started/classes/intro-to-TTS-Tech-Portfolio.md"
+        },
+        {
+          "q": "Should I install macOS updates myself as soon as they come out?",
+          "gold": "getting-started/equipment.md",
+          "top1": "18f/how-18f-works/one-on-ones.md"
+        },
+        {
+          "q": "Can I borrow a temporary Windows machine from IT?",
+          "gold": "getting-started/equipment.md",
+          "top1": "tools/virtual-desktop.md"
+        },
+        {
+          "q": "My stolen laptop was found and returned to me. Can I keep using it?",
+          "gold": "getting-started/equipment.md",
+          "top1": "sample_kb/company_it_handbook.md"
+        },
+        {
+          "q": "What does my enterprise account username look like?",
+          "gold": "getting-started/how-to-log-in.md",
+          "top1": "18f/projects-partners/project-teams.md"
+        },
+        {
+          "q": "How many old passwords am I blocked from reusing on my Mac?",
+          "gold": "getting-started/how-to-log-in.md",
+          "top1": "travel-and-leave/travel-and-leave-policies/travel-guide-faq.md"
+        },
+        {
+          "q": "On which day of the week are new badges processed?",
+          "gold": "getting-started/piv.md",
+          "top1": "general-information-and-resources/employee-resources-policies/work-schedules.md"
+        },
+        {
+          "q": "Which certificate should I pick when a site asks me to choose one from my smart card?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/piv.md"
+        },
+        {
+          "q": "I left my badge at home, how can I log into my laptop today?",
+          "gold": "getting-started/piv.md",
+          "top1": "travel-and-leave/travel-and-leave-policies/travel-guide-faq.md"
+        },
+        {
+          "q": "How can I come up with a strong password I can still remember?",
+          "gold": "general-information-and-resources/tech-policies/password-requirements.md",
+          "top1": "general-information-and-resources/tech-policies/password-requirements.md"
+        },
+        {
+          "q": "I see weird activity on my computer, should I shut it down?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "travel-and-leave/travel-and-leave-policies/travel-guide-faq.md"
+        },
+        {
+          "q": "How quickly must a security incident be reported?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/tech-policies/security-incidents.md"
+        },
+        {
+          "q": "The tool I need is not approved yet. What is the first step?",
+          "gold": "general-information-and-resources/software.md",
+          "top1": "18f/chapters/product.md"
+        },
+        {
+          "q": "Where can I install desktop software myself without a ticket?",
+          "gold": "general-information-and-resources/software.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "What are the two web addresses for my GSA email?",
+          "gold": "tools/gmail.md",
+          "top1": "tools/google-groups.md"
+        },
+        {
+          "q": "How do I share a file with all of TTS?",
+          "gold": "tools/google-drive.md",
+          "top1": "tools/slack/getting-started.md"
+        },
+        {
+          "q": "Are chat messages subject to FOIA?",
+          "gold": "tools/slack/getting-started.md",
+          "top1": "about-us/centers-of-excellence/operations/onboarding.md"
+        },
+        {
+          "q": "How do I run a Windows-only program on my Mac?",
+          "gold": "tools/virtual-desktop.md",
+          "top1": "tools/virtual-desktop.md"
+        },
+        {
+          "q": "I need Word and Excel just for today, what's the fastest way?",
+          "gold": "tools/office.md",
+          "top1": "tools/office.md"
+        }
+      ]
+    },
+    "TF-IDF (word 1-2 grams)": {
+      "hit1": {
+        "mean": 0.5131578947368421,
+        "ci95": [
+          0.39473684210526316,
+          0.631578947368421
+        ]
+      },
+      "hit4": {
+        "mean": 0.7105263157894737,
+        "ci95": [
+          0.6052631578947368,
+          0.8157894736842105
+        ]
+      },
+      "mrr": {
+        "mean": 0.6130482456140351,
+        "ci95": [
+          0.5157812500000001,
+          0.7077960526315789
+        ]
+      },
+      "ndcg": {
+        "mean": 0.6577924564943144,
+        "ci95": [
+          0.5645249169871212,
+          0.746350240427439
+        ]
+      },
+      "hit4_lexical": 0.8823529411764706,
+      "hit4_paraphrase": 0.5714285714285714,
+      "latency_ms_per_query": 0.05029063475759406,
+      "misses_at_4": [
+        {
+          "q": "What is the minimum password length at NovaRetail?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "sample_kb/company_it_handbook.md"
+        },
+        {
+          "q": "I typed my password wrong several times and now I can't get in. Why?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/conflict-feedback-receiving-feedback.md"
+        },
+        {
+          "q": "Can I use text messages as my second factor?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "tools/text-editors.md"
+        },
+        {
+          "q": "Will IT give me admin rights so I can install an app that isn't in the catalogue?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "I left my work notebook computer on the train. What do I do?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "travel-and-leave/travel-and-leave-policies/travel-guide-a-amended-authorizations.md"
+        },
+        {
+          "q": "Lots of people suddenly can't get their mail, should we ask them to reinstall Outlook?",
+          "gold": "sample_kb/service_desk_runbook.md",
+          "top1": "tools/sharedcalendars.md"
+        },
+        {
+          "q": "Should I install macOS updates myself as soon as they come out?",
+          "gold": "getting-started/equipment.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "Can I borrow a temporary Windows machine from IT?",
+          "gold": "getting-started/equipment.md",
+          "top1": "tools/hrlinks.md"
+        },
+        {
+          "q": "Does GSA hand out wireless keyboards and mice?",
+          "gold": "getting-started/equipment.md",
+          "top1": "general-information-and-resources/washington-dc.md"
+        },
+        {
+          "q": "What does my enterprise account username look like?",
+          "gold": "getting-started/how-to-log-in.md",
+          "top1": "general-information-and-resources/employee-resources-policies/deaf-hoh.md"
+        },
+        {
+          "q": "Which certificate should I pick when a site asks me to choose one from my smart card?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/piv.md"
+        },
+        {
+          "q": "I left my badge at home, how can I log into my laptop today?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "How can I come up with a strong password I can still remember?",
+          "gold": "general-information-and-resources/tech-policies/password-requirements.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "How quickly must a security incident be reported?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/tech-policies/security-incidents.md"
+        },
+        {
+          "q": "The tool I need is not approved yet. What is the first step?",
+          "gold": "general-information-and-resources/software.md",
+          "top1": "tools/hrlinks.md"
+        },
+        {
+          "q": "Where can I install desktop software myself without a ticket?",
+          "gold": "general-information-and-resources/software.md",
+          "top1": "getting-started/classes/gsa-internal-tools.md"
+        },
+        {
+          "q": "What are the two web addresses for my GSA email?",
+          "gold": "tools/gmail.md",
+          "top1": "updating-the-handbook/updating-the-handbook.md"
+        },
+        {
+          "q": "How do I share a file with all of TTS?",
+          "gold": "tools/google-drive.md",
+          "top1": "tools/sharedcalendars.md"
+        },
+        {
+          "q": "How do I sign in to the TTS Slack workspace?",
+          "gold": "tools/slack/getting-started.md",
+          "top1": "tools/slack/guidelines.md"
+        },
+        {
+          "q": "Are chat messages subject to FOIA?",
+          "gold": "tools/slack/getting-started.md",
+          "top1": "about-us/centers-of-excellence/operations/collaboration.md"
+        },
+        {
+          "q": "How do I run a Windows-only program on my Mac?",
+          "gold": "tools/virtual-desktop.md",
+          "top1": "tools/virtual-desktop.md"
+        },
+        {
+          "q": "I need Word and Excel just for today, what's the fastest way?",
+          "gold": "tools/office.md",
+          "top1": "tools/office.md"
+        }
+      ]
+    },
+    "bge-small-en-v1.5": {
+      "hit1": {
+        "mean": 0.5921052631578947,
+        "ci95": [
+          0.47368421052631576,
+          0.6973684210526315
+        ]
+      },
+      "hit4": {
+        "mean": 0.8289473684210527,
+        "ci95": [
+          0.7368421052631579,
+          0.9078947368421053
+        ]
+      },
+      "mrr": {
+        "mean": 0.7051065162907267,
+        "ci95": [
+          0.6164771303258146,
+          0.7875422932330828
+        ]
+      },
+      "ndcg": {
+        "mean": 0.758432827895313,
+        "ci95": [
+          0.683821991730183,
+          0.8288366013422303
+        ]
+      },
+      "hit4_lexical": 0.8823529411764706,
+      "hit4_paraphrase": 0.7857142857142857,
+      "latency_ms_per_query": 7.692042149995503,
+      "misses_at_4": [
+        {
+          "q": "I typed my password wrong several times and now I can't get in. Why?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/tech-policies/password-requirements.md"
+        },
+        {
+          "q": "Which MFA methods are approved?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/tech-policies/fitara.md"
+        },
+        {
+          "q": "Can I use text messages as my second factor?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "I left my work notebook computer on the train. What do I do?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "I left my badge at home, how can I log into my laptop today?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/piv.md"
+        },
+        {
+          "q": "How quickly must a security incident be reported?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/tech-policies/security-incidents.md"
+        },
+        {
+          "q": "What is the approved way to share sensitive files during an active incident?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/sensitive-information.md"
+        },
+        {
+          "q": "I accidentally committed an API token to a public repo. Is that an incident?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/sensitive-information.md"
+        },
+        {
+          "q": "Is it OK to publish IAM role and group names?",
+          "gold": "general-information-and-resources/sensitive-information.md",
+          "top1": "hiring-staying-or-changing-jobs/external-details.md"
+        },
+        {
+          "q": "What are the two web addresses for my GSA email?",
+          "gold": "tools/gmail.md",
+          "top1": "tools/slack/getting-started.md"
+        },
+        {
+          "q": "My video meetings get cut off after 40 minutes, how do I fix that?",
+          "gold": "tools/zoom.md",
+          "top1": "general-information-and-resources/employee-resources-policies/deaf-hoh.md"
+        },
+        {
+          "q": "What algorithm should I use when generating my commit signing key?",
+          "gold": "tools/git-signing.md",
+          "top1": "tools/git-signing.md"
+        },
+        {
+          "q": "How do I run a Windows-only program on my Mac?",
+          "gold": "tools/virtual-desktop.md",
+          "top1": "getting-started/equipment.md"
+        }
+      ]
+    },
+    "all-MiniLM-L6-v2": {
+      "hit1": {
+        "mean": 0.5657894736842105,
+        "ci95": [
+          0.4473684210526316,
+          0.6842105263157895
+        ]
+      },
+      "hit4": {
+        "mean": 0.7894736842105263,
+        "ci95": [
+          0.6973684210526315,
+          0.881578947368421
+        ]
+      },
+      "mrr": {
+        "mean": 0.6667919799498747,
+        "ci95": [
+          0.577545817669173,
+          0.7539736058897243
+        ]
+      },
+      "ndcg": {
+        "mean": 0.7168743325922975,
+        "ci95": [
+          0.6341701669552889,
+          0.7936689649664183
+        ]
+      },
+      "hit4_lexical": 0.8823529411764706,
+      "hit4_paraphrase": 0.7142857142857143,
+      "latency_ms_per_query": 3.3347543917204203,
+      "misses_at_4": [
+        {
+          "q": "I typed my password wrong several times and now I can't get in. Why?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "Can I use text messages as my second factor?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "How urgent is a request where one person is stuck but has a partial workaround?",
+          "gold": "sample_kb/service_desk_runbook.md",
+          "top1": "getting-started/classes/writing-lab.md"
+        },
+        {
+          "q": "My stolen laptop was found and returned to me. Can I keep using it?",
+          "gold": "getting-started/equipment.md",
+          "top1": "sample_kb/company_it_handbook.md"
+        },
+        {
+          "q": "Which certificate should I pick when a site asks me to choose one from my smart card?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/piv.md"
+        },
+        {
+          "q": "I left my badge at home, how can I log into my laptop today?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/piv.md"
+        },
+        {
+          "q": "How quickly must a security incident be reported?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/tech-policies/security-incidents.md"
+        },
+        {
+          "q": "What is the approved way to share sensitive files during an active incident?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/sensitive-information.md"
+        },
+        {
+          "q": "What subject line should an incident report email have?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/tech-policies/security-incidents.md"
+        },
+        {
+          "q": "I accidentally committed an API token to a public repo. Is that an incident?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/sensitive-information.md"
+        },
+        {
+          "q": "How do I share a file with all of TTS?",
+          "gold": "tools/google-drive.md",
+          "top1": "getting-started/index.md"
+        },
+        {
+          "q": "Are chat messages subject to FOIA?",
+          "gold": "tools/slack/getting-started.md",
+          "top1": "18f/chapters/design.md"
+        },
+        {
+          "q": "My video meetings get cut off after 40 minutes, how do I fix that?",
+          "gold": "tools/zoom.md",
+          "top1": "about-us/centers-of-excellence/operations/collaboration.md"
+        },
+        {
+          "q": "What algorithm should I use when generating my commit signing key?",
+          "gold": "tools/git-signing.md",
+          "top1": "tools/git-signing.md"
+        },
+        {
+          "q": "How do I run a Windows-only program on my Mac?",
+          "gold": "tools/virtual-desktop.md",
+          "top1": "tools/text-editors.md"
+        },
+        {
+          "q": "I need Word and Excel just for today, what's the fastest way?",
+          "gold": "tools/office.md",
+          "top1": "18f/chapters/design.md"
+        }
+      ]
+    },
+    "bge-base-en-v1.5": {
+      "hit1": {
+        "mean": 0.618421052631579,
+        "ci95": [
+          0.5131578947368421,
+          0.7236842105263158
+        ]
+      },
+      "hit4": {
+        "mean": 0.868421052631579,
+        "ci95": [
+          0.7894736842105263,
+          0.9342105263157895
+        ]
+      },
+      "mrr": {
+        "mean": 0.7429093567251461,
+        "ci95": [
+          0.664906798245614,
+          0.8157291666666665
+        ]
+      },
+      "ndcg": {
+        "mean": 0.7929877841754942,
+        "ci95": [
+          0.7246291084927882,
+          0.8551095758439685
+        ]
+      },
+      "hit4_lexical": 0.9117647058823529,
+      "hit4_paraphrase": 0.8333333333333334,
+      "latency_ms_per_query": 27.595065141979017,
+      "misses_at_4": [
+        {
+          "q": "I typed my password wrong several times and now I can't get in. Why?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/tech-policies/password-requirements.md"
+        },
+        {
+          "q": "Which MFA methods are approved?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "launching-software/security.md"
+        },
+        {
+          "q": "Can I use text messages as my second factor?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "I left my badge at home, how can I log into my laptop today?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "How quickly must a security incident be reported?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/tech-policies/security-incidents.md"
+        },
+        {
+          "q": "The tool I need is not approved yet. What is the first step?",
+          "gold": "general-information-and-resources/software.md",
+          "top1": "18f/chapters/engineering.md"
+        },
+        {
+          "q": "Are chat messages subject to FOIA?",
+          "gold": "tools/slack/getting-started.md",
+          "top1": "tools/slack/records.md"
+        },
+        {
+          "q": "My video meetings get cut off after 40 minutes, how do I fix that?",
+          "gold": "tools/zoom.md",
+          "top1": "getting-started/classes/meetings-and-meeting-tools.md"
+        },
+        {
+          "q": "GitHub shows my signed commits as Unverified, why?",
+          "gold": "tools/git-signing.md",
+          "top1": "tools/git-signing.md"
+        },
+        {
+          "q": "How do I run a Windows-only program on my Mac?",
+          "gold": "tools/virtual-desktop.md",
+          "top1": "tools/office.md"
+        }
+      ]
+    },
+    "e5-base-v2": {
+      "hit1": {
+        "mean": 0.6447368421052632,
+        "ci95": [
+          0.5391447368421053,
+          0.75
+        ]
+      },
+      "hit4": {
+        "mean": 0.8421052631578947,
+        "ci95": [
+          0.7631578947368421,
+          0.9210526315789473
+        ]
+      },
+      "mrr": {
+        "mean": 0.7314118629908103,
+        "ci95": [
+          0.6434301900584796,
+          0.8161654135338345
+        ]
+      },
+      "ndcg": {
+        "mean": 0.7664074414037441,
+        "ci95": [
+          0.6858905890705115,
+          0.8430115575855615
+        ]
+      },
+      "hit4_lexical": 0.9705882352941176,
+      "hit4_paraphrase": 0.7380952380952381,
+      "latency_ms_per_query": 21.75054424687436,
+      "misses_at_4": [
+        {
+          "q": "My remote connection to the corporate network keeps dropping, what should I try first?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/classes/gsa-internal-tools.md"
+        },
+        {
+          "q": "I typed my password wrong several times and now I can't get in. Why?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/tech-policies/password-requirements.md"
+        },
+        {
+          "q": "Can I use text messages as my second factor?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "Will IT give me admin rights so I can install an app that isn't in the catalogue?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/reasonable-accommodations.md"
+        },
+        {
+          "q": "I left my work notebook computer on the train. What do I do?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "training-and-development/external-speaking-request-playbook.md"
+        },
+        {
+          "q": "I left my badge at home, how can I log into my laptop today?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/piv.md"
+        },
+        {
+          "q": "What should I put as answers to account security questions?",
+          "gold": "general-information-and-resources/tech-policies/password-requirements.md",
+          "top1": "training-and-development/external-speaking-request-playbook.md"
+        },
+        {
+          "q": "The tool I need is not approved yet. What is the first step?",
+          "gold": "general-information-and-resources/software.md",
+          "top1": "18f/chapters/design.md"
+        },
+        {
+          "q": "What are the two web addresses for my GSA email?",
+          "gold": "tools/gmail.md",
+          "top1": "general-information-and-resources/washington-dc.md"
+        },
+        {
+          "q": "Are chat messages subject to FOIA?",
+          "gold": "tools/slack/getting-started.md",
+          "top1": "18f/chapters/design.md"
+        },
+        {
+          "q": "My video meetings get cut off after 40 minutes, how do I fix that?",
+          "gold": "tools/zoom.md",
+          "top1": "hiring-staying-or-changing-jobs/leaving-tts.md"
+        },
+        {
+          "q": "How do I run a Windows-only program on my Mac?",
+          "gold": "tools/virtual-desktop.md",
+          "top1": "getting-started/piv.md"
+        }
+      ]
+    },
+    "Hybrid RRF (BM25 + bge-small-en-v1.5)": {
+      "hit1": {
+        "mean": 0.5921052631578947,
+        "ci95": [
+          0.4868421052631579,
+          0.6973684210526315
+        ]
+      },
+      "hit4": {
+        "mean": 0.8289473684210527,
+        "ci95": [
+          0.7368421052631579,
+          0.9078947368421053
+        ]
+      },
+      "mrr": {
+        "mean": 0.6988669590643276,
+        "ci95": [
+          0.614967105263158,
+          0.7857465277777778
+        ]
+      },
+      "ndcg": {
+        "mean": 0.7521053802942855,
+        "ci95": [
+          0.6770552831401576,
+          0.8247048891789502
+        ]
+      },
+      "hit4_lexical": 0.9411764705882353,
+      "hit4_paraphrase": 0.7380952380952381,
+      "latency_ms_per_query": 13.015941569679663,
+      "misses_at_4": [
+        {
+          "q": "What is the minimum password length at NovaRetail?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "sample_kb/company_it_handbook.md"
+        },
+        {
+          "q": "I typed my password wrong several times and now I can't get in. Why?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "travel-and-leave/travel-and-leave-policies/travel-guide-faq.md"
+        },
+        {
+          "q": "Can I use text messages as my second factor?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "I left my work notebook computer on the train. What do I do?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/classes/intro-to-TTS-Tech-Portfolio.md"
+        },
+        {
+          "q": "Lots of people suddenly can't get their mail, should we ask them to reinstall Outlook?",
+          "gold": "sample_kb/service_desk_runbook.md",
+          "top1": "tools/slack/getting-started.md"
+        },
+        {
+          "q": "I left my badge at home, how can I log into my laptop today?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "How can I come up with a strong password I can still remember?",
+          "gold": "general-information-and-resources/tech-policies/password-requirements.md",
+          "top1": "general-information-and-resources/tech-policies/password-requirements.md"
+        },
+        {
+          "q": "How quickly must a security incident be reported?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/tech-policies/security-incidents.md"
+        },
+        {
+          "q": "I accidentally committed an API token to a public repo. Is that an incident?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/sensitive-information.md"
+        },
+        {
+          "q": "Where can I install desktop software myself without a ticket?",
+          "gold": "general-information-and-resources/software.md",
+          "top1": "getting-started/classes/gsa-internal-tools.md"
+        },
+        {
+          "q": "What are the two web addresses for my GSA email?",
+          "gold": "tools/gmail.md",
+          "top1": "updating-the-handbook/updating-the-handbook.md"
+        },
+        {
+          "q": "Are chat messages subject to FOIA?",
+          "gold": "tools/slack/getting-started.md",
+          "top1": "about-us/centers-of-excellence/operations/onboarding.md"
+        },
+        {
+          "q": "I need Word and Excel just for today, what's the fastest way?",
+          "gold": "tools/office.md",
+          "top1": "tools/office.md"
+        }
+      ]
+    },
+    "Hybrid RRF (BM25 + all-MiniLM-L6-v2)": {
+      "hit1": {
+        "mean": 0.5657894736842105,
+        "ci95": [
+          0.4605263157894737,
+          0.6710526315789473
+        ]
+      },
+      "hit4": {
+        "mean": 0.7894736842105263,
+        "ci95": [
+          0.6973684210526315,
+          0.881578947368421
+        ]
+      },
+      "mrr": {
+        "mean": 0.6805712197159566,
+        "ci95": [
+          0.598500026106934,
+          0.7655025584795321
+        ]
+      },
+      "ndcg": {
+        "mean": 0.7369909598381175,
+        "ci95": [
+          0.6663183087972805,
+          0.8100490922748242
+        ]
+      },
+      "hit4_lexical": 0.8823529411764706,
+      "hit4_paraphrase": 0.7142857142857143,
+      "latency_ms_per_query": 8.072467226731149,
+      "misses_at_4": [
+        {
+          "q": "I typed my password wrong several times and now I can't get in. Why?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "travel-and-leave/travel-and-leave-policies/travel-guide-faq.md"
+        },
+        {
+          "q": "Can I use text messages as my second factor?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "I left my work notebook computer on the train. What do I do?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/classes/intro-to-TTS-Tech-Portfolio.md"
+        },
+        {
+          "q": "How urgent is a request where one person is stuck but has a partial workaround?",
+          "gold": "sample_kb/service_desk_runbook.md",
+          "top1": "getting-started/classes/writing-lab.md"
+        },
+        {
+          "q": "My stolen laptop was found and returned to me. Can I keep using it?",
+          "gold": "getting-started/equipment.md",
+          "top1": "sample_kb/company_it_handbook.md"
+        },
+        {
+          "q": "Which certificate should I pick when a site asks me to choose one from my smart card?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/piv.md"
+        },
+        {
+          "q": "I left my badge at home, how can I log into my laptop today?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "How can I come up with a strong password I can still remember?",
+          "gold": "general-information-and-resources/tech-policies/password-requirements.md",
+          "top1": "general-information-and-resources/tech-policies/password-requirements.md"
+        },
+        {
+          "q": "How quickly must a security incident be reported?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/tech-policies/security-incidents.md"
+        },
+        {
+          "q": "What is the approved way to share sensitive files during an active incident?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/sensitive-information.md"
+        },
+        {
+          "q": "What subject line should an incident report email have?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/tech-policies/security-incidents.md"
+        },
+        {
+          "q": "What are the two web addresses for my GSA email?",
+          "gold": "tools/gmail.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "How do I share a file with all of TTS?",
+          "gold": "tools/google-drive.md",
+          "top1": "getting-started/index.md"
+        },
+        {
+          "q": "Are chat messages subject to FOIA?",
+          "gold": "tools/slack/getting-started.md",
+          "top1": "about-us/centers-of-excellence/operations/onboarding.md"
+        },
+        {
+          "q": "How do I run a Windows-only program on my Mac?",
+          "gold": "tools/virtual-desktop.md",
+          "top1": "general-information-and-resources/reasonable-accommodations.md"
+        },
+        {
+          "q": "I need Word and Excel just for today, what's the fastest way?",
+          "gold": "tools/office.md",
+          "top1": "hiring-staying-or-changing-jobs/resume.md"
+        }
+      ]
+    },
+    "Hybrid RRF (BM25 + bge-base-en-v1.5)": {
+      "hit1": {
+        "mean": 0.631578947368421,
+        "ci95": [
+          0.5263157894736842,
+          0.7368421052631579
+        ]
+      },
+      "hit4": {
+        "mean": 0.7763157894736842,
+        "ci95": [
+          0.6842105263157895,
+          0.868421052631579
+        ]
+      },
+      "mrr": {
+        "mean": 0.7177213868003341,
+        "ci95": [
+          0.6328811612364246,
+          0.8000738826232248
+        ]
+      },
+      "ndcg": {
+        "mean": 0.7684313955183634,
+        "ci95": [
+          0.6955302676988669,
+          0.8369411134601898
+        ]
+      },
+      "hit4_lexical": 0.9411764705882353,
+      "hit4_paraphrase": 0.6428571428571429,
+      "latency_ms_per_query": 32.23004152900294,
+      "misses_at_4": [
+        {
+          "q": "What is the minimum password length at NovaRetail?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "sample_kb/company_it_handbook.md"
+        },
+        {
+          "q": "I typed my password wrong several times and now I can't get in. Why?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/san-francisco.md"
+        },
+        {
+          "q": "Can I use text messages as my second factor?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "Will IT give me admin rights so I can install an app that isn't in the catalogue?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "I left my work notebook computer on the train. What do I do?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/distributed.md"
+        },
+        {
+          "q": "Lots of people suddenly can't get their mail, should we ask them to reinstall Outlook?",
+          "gold": "sample_kb/service_desk_runbook.md",
+          "top1": "tools/slack/user-management.md"
+        },
+        {
+          "q": "How urgent is a request where one person is stuck but has a partial workaround?",
+          "gold": "sample_kb/service_desk_runbook.md",
+          "top1": "tools/hrlinks.md"
+        },
+        {
+          "q": "What does my enterprise account username look like?",
+          "gold": "getting-started/how-to-log-in.md",
+          "top1": "getting-started/classes/gsa-internal-tools.md"
+        },
+        {
+          "q": "I left my badge at home, how can I log into my laptop today?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "How can I come up with a strong password I can still remember?",
+          "gold": "general-information-and-resources/tech-policies/password-requirements.md",
+          "top1": "general-information-and-resources/tech-policies/password-requirements.md"
+        },
+        {
+          "q": "How quickly must a security incident be reported?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/tech-policies/security-incidents.md"
+        },
+        {
+          "q": "Where can I install desktop software myself without a ticket?",
+          "gold": "general-information-and-resources/software.md",
+          "top1": "getting-started/classes/gsa-internal-tools.md"
+        },
+        {
+          "q": "What are the two web addresses for my GSA email?",
+          "gold": "tools/gmail.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "Are chat messages subject to FOIA?",
+          "gold": "tools/slack/getting-started.md",
+          "top1": "tools/slack/records.md"
+        },
+        {
+          "q": "My video meetings get cut off after 40 minutes, how do I fix that?",
+          "gold": "tools/zoom.md",
+          "top1": "getting-started/classes/meetings-and-meeting-tools.md"
+        },
+        {
+          "q": "How do I run a Windows-only program on my Mac?",
+          "gold": "tools/virtual-desktop.md",
+          "top1": "general-information-and-resources/reasonable-accommodations.md"
+        },
+        {
+          "q": "I need Word and Excel just for today, what's the fastest way?",
+          "gold": "tools/office.md",
+          "top1": "tools/office.md"
+        }
+      ]
+    },
+    "Hybrid RRF (BM25 + e5-base-v2)": {
+      "hit1": {
+        "mean": 0.631578947368421,
+        "ci95": [
+          0.5263157894736842,
+          0.7368421052631579
+        ]
+      },
+      "hit4": {
+        "mean": 0.8157894736842105,
+        "ci95": [
+          0.7368421052631579,
+          0.9078947368421053
+        ]
+      },
+      "mrr": {
+        "mean": 0.7276837928153718,
+        "ci95": [
+          0.6465183792815372,
+          0.808265194235589
+        ]
+      },
+      "ndcg": {
+        "mean": 0.7771872386935302,
+        "ci95": [
+          0.7081334436404222,
+          0.8475136656809107
+        ]
+      },
+      "hit4_lexical": 0.9411764705882353,
+      "hit4_paraphrase": 0.7142857142857143,
+      "latency_ms_per_query": 26.718516098825557,
+      "misses_at_4": [
+        {
+          "q": "What is the minimum password length at NovaRetail?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "sample_kb/company_it_handbook.md"
+        },
+        {
+          "q": "I typed my password wrong several times and now I can't get in. Why?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/san-francisco.md"
+        },
+        {
+          "q": "Can I use text messages as my second factor?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "Will IT give me admin rights so I can install an app that isn't in the catalogue?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "I left my work notebook computer on the train. What do I do?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/san-francisco.md"
+        },
+        {
+          "q": "How urgent is a request where one person is stuck but has a partial workaround?",
+          "gold": "sample_kb/service_desk_runbook.md",
+          "top1": "getting-started/classes/writing-lab.md"
+        },
+        {
+          "q": "I left my badge at home, how can I log into my laptop today?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "How can I come up with a strong password I can still remember?",
+          "gold": "general-information-and-resources/tech-policies/password-requirements.md",
+          "top1": "general-information-and-resources/tech-policies/password-requirements.md"
+        },
+        {
+          "q": "How quickly must a security incident be reported?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/tech-policies/security-incidents.md"
+        },
+        {
+          "q": "Where can I install desktop software myself without a ticket?",
+          "gold": "general-information-and-resources/software.md",
+          "top1": "tools/virtual-desktop.md"
+        },
+        {
+          "q": "What are the two web addresses for my GSA email?",
+          "gold": "tools/gmail.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "Are chat messages subject to FOIA?",
+          "gold": "tools/slack/getting-started.md",
+          "top1": "about-us/centers-of-excellence/operations/onboarding.md"
+        },
+        {
+          "q": "How do I run a Windows-only program on my Mac?",
+          "gold": "tools/virtual-desktop.md",
+          "top1": "general-information-and-resources/reasonable-accommodations.md"
+        },
+        {
+          "q": "I need Word and Excel just for today, what's the fastest way?",
+          "gold": "tools/office.md",
+          "top1": "tools/office.md"
+        }
+      ]
+    },
+    "Hybrid RRF (BM25 + bge-small-en-v1.5) + rerank (bge-reranker-base, top 30)": {
+      "hit1": {
+        "mean": 0.7236842105263158,
+        "ci95": [
+          0.618421052631579,
+          0.8157894736842105
+        ]
+      },
+      "hit4": {
+        "mean": 0.9210526315789473,
+        "ci95": [
+          0.8552631578947368,
+          0.9736842105263158
+        ]
+      },
+      "mrr": {
+        "mean": 0.8097587719298245,
+        "ci95": [
+          0.7357456140350878,
+          0.8804824561403509
+        ]
+      },
+      "ndcg": {
+        "mean": 0.8470403168957285,
+        "ci95": [
+          0.7851660698379883,
+          0.9061965326046479
+        ]
+      },
+      "hit4_lexical": 0.9705882352941176,
+      "hit4_paraphrase": 0.8809523809523809,
+      "latency_ms_per_query": 9515.46754648811,
+      "misses_at_4": [
+        {
+          "q": "Can I use text messages as my second factor?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "I left my badge at home, how can I log into my laptop today?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/piv.md"
+        },
+        {
+          "q": "How quickly must a security incident be reported?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/tech-policies/security-incidents.md"
+        },
+        {
+          "q": "Where can I install desktop software myself without a ticket?",
+          "gold": "general-information-and-resources/software.md",
+          "top1": "getting-started/classes/gsa-internal-tools.md"
+        },
+        {
+          "q": "Are chat messages subject to FOIA?",
+          "gold": "tools/slack/getting-started.md",
+          "top1": "about-us/centers-of-excellence/operations/collaboration.md"
+        },
+        {
+          "q": "I need Word and Excel just for today, what's the fastest way?",
+          "gold": "tools/office.md",
+          "top1": "tools/virtual-desktop.md"
+        }
+      ]
+    }
+  },
+  "refusal": {
+    "BM25": {
+      "auc": 0.7236842105263158,
+      "cv_accuracy": 0.7810416666666665,
+      "majority_baseline": 0.7916666666666666
+    },
+    "TF-IDF (word 1-2 grams)": {
+      "auc": 0.7190789473684212,
+      "cv_accuracy": 0.7589583333333333,
+      "majority_baseline": 0.7916666666666666
+    },
+    "bge-small-en-v1.5": {
+      "auc": 0.8888157894736842,
+      "cv_accuracy": 0.8672916666666667,
+      "majority_baseline": 0.7916666666666666
+    },
+    "all-MiniLM-L6-v2": {
+      "auc": 0.868421052631579,
+      "cv_accuracy": 0.831875,
+      "majority_baseline": 0.7916666666666666
+    },
+    "bge-base-en-v1.5": {
+      "auc": 0.9322368421052633,
+      "cv_accuracy": 0.8718750000000002,
+      "majority_baseline": 0.7916666666666666
+    },
+    "e5-base-v2": {
+      "auc": 0.9013157894736842,
+      "cv_accuracy": 0.8385416666666665,
+      "majority_baseline": 0.7916666666666666
+    },
+    "Hybrid RRF (BM25 + bge-small-en-v1.5)": {
+      "auc": 0.780263157894737,
+      "cv_accuracy": 0.7914583333333334,
+      "majority_baseline": 0.7916666666666666
+    },
+    "Hybrid RRF (BM25 + all-MiniLM-L6-v2)": {
+      "auc": 0.7059210526315789,
+      "cv_accuracy": 0.7825,
+      "majority_baseline": 0.7916666666666666
+    },
+    "Hybrid RRF (BM25 + bge-base-en-v1.5)": {
+      "auc": 0.7703947368421052,
+      "cv_accuracy": 0.7835416666666666,
+      "majority_baseline": 0.7916666666666666
+    },
+    "Hybrid RRF (BM25 + e5-base-v2)": {
+      "auc": 0.7141447368421053,
+      "cv_accuracy": 0.7608333333333335,
+      "majority_baseline": 0.7916666666666666
+    },
+    "Hybrid RRF (BM25 + bge-small-en-v1.5) + rerank (bge-reranker-base, top 30)": {
+      "auc": 0.9118421052631579,
+      "cv_accuracy": 0.896875,
+      "majority_baseline": 0.7916666666666666
+    }
+  },
+  "paired_tests": {
+    "TF-IDF (word 1-2 grams) vs BM25 (hit@4)": 0.45015498450154984,
+    "bge-small-en-v1.5 vs BM25 (hit@4)": 0.0217978202179782,
+    "all-MiniLM-L6-v2 vs BM25 (hit@4)": 0.061993800619938005,
+    "bge-base-en-v1.5 vs BM25 (hit@4)": 0.0010998900109989002,
+    "e5-base-v2 vs BM25 (hit@4)": 0.004999500049995001,
+    "Hybrid RRF (BM25 + bge-small-en-v1.5) vs BM25 (hit@4)": 0.0012998700129987,
+    "Hybrid RRF (BM25 + all-MiniLM-L6-v2) vs BM25 (hit@4)": 0.0197980201979802,
+    "Hybrid RRF (BM25 + bge-base-en-v1.5) vs BM25 (hit@4)": 0.022397760223977603,
+    "Hybrid RRF (BM25 + e5-base-v2) vs BM25 (hit@4)": 0.0007999200079992001,
+    "Hybrid RRF (BM25 + bge-small-en-v1.5) + rerank (bge-reranker-base, top 30) vs BM25 (hit@4)": 9.999000099990002e-05
+  }
+}
