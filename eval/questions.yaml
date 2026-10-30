@@ -1,0 +1,108 @@
+# Labelled evaluation set for retrieval and refusal.
+# source: file the answer lives in (relative to the corpus root); span: a short exact phrase from the
+# passage that answers the question (a retrieved chunk counts as relevant only if it contains the span,
+# so the labels do not depend on the chunk size). style: "lexical" = shares key words with the source,
+# "paraphrase" = asks the same thing in different words (the realistic, harder case).
+# kind: in_scope (answer is in the KB) | out_of_scope (answer is NOT in the KB -> the agent should not
+# answer from the KB; it should fall back to the web or decline).
+in_scope:
+  # ---------------- sample KB (fictional NovaRetail) ----------------
+  - {q: "How do I connect to the NovaSecure VPN from home?", source: sample_kb/company_it_handbook.md, span: "Install the NovaSecure VPN client", style: lexical}
+  - {q: "My remote connection to the corporate network keeps dropping, what should I try first?", source: sample_kb/company_it_handbook.md, span: "restart the client, and try another corporate gateway", style: paraphrase}
+  - {q: "What is the minimum password length at NovaRetail?", source: sample_kb/company_it_handbook.md, span: "at least 14 characters", style: lexical}
+  - {q: "I typed my password wrong several times and now I can't get in. Why?", source: sample_kb/company_it_handbook.md, span: "After five failed login attempts", style: paraphrase}
+  - {q: "Which MFA methods are approved?", source: sample_kb/company_it_handbook.md, span: "company authenticator app and registered hardware security keys", style: lexical}
+  - {q: "Can I use text messages as my second factor?", source: sample_kb/company_it_handbook.md, span: "SMS should only be used when explicitly enabled", style: paraphrase}
+  - {q: "Where am I allowed to install business software from?", source: sample_kb/company_it_handbook.md, span: "only from the company Software Portal", style: lexical}
+  - {q: "Will IT give me admin rights so I can install an app that isn't in the catalogue?", source: sample_kb/company_it_handbook.md, span: "Administrator access is not granted simply to install unapproved applications", style: paraphrase}
+  - {q: "I left my work notebook computer on the train. What do I do?", source: sample_kb/company_it_handbook.md, span: "Immediately report a lost or stolen company laptop", style: paraphrase}
+  - {q: "A user cannot send or receive email, how should the service desk troubleshoot?", source: sample_kb/service_desk_runbook.md, span: "confirm whether the issue affects one user or many users", style: lexical}
+  - {q: "Lots of people suddenly can't get their mail, should we ask them to reinstall Outlook?", source: sample_kb/service_desk_runbook.md, span: "do not ask each user to reinstall software", style: paraphrase}
+  - {q: "What should I check when a laptop is running slowly?", source: sample_kb/service_desk_runbook.md, span: "check CPU, memory, storage free space", style: lexical}
+  - {q: "What does P2 priority mean for a ticket?", source: sample_kb/service_desk_runbook.md, span: "P2: major team blocked with no workaround", style: lexical}
+  - {q: "How urgent is a request where one person is stuck but has a partial workaround?", source: sample_kb/service_desk_runbook.md, span: "P3: individual user blocked or degraded", style: paraphrase}
+  # ---------------- 18F / TTS Handbook (real, public domain) ----------------
+  - {q: "How do I lock my MacBook before walking away?", source: getting-started/equipment.md, span: "Control + Shift + Power", style: lexical}
+  - {q: "Should I install macOS updates myself as soon as they come out?", source: getting-started/equipment.md, span: "Please wait to do any operating system upgrades", style: paraphrase}
+  - {q: "How do I encrypt a USB drive before plugging it into a work machine?", source: getting-started/equipment.md, span: "FileVault encryption to removable USB drives", style: lexical}
+  - {q: "Can I keep controlled unclassified information on my personal computer?", source: getting-started/equipment.md, span: "can never be stored on a personal machine", style: lexical}
+  - {q: "Can I borrow a temporary Windows machine from IT?", source: getting-started/equipment.md, span: "request a loaner PC through the IT Service Desk", style: paraphrase}
+  - {q: "Does GSA hand out wireless keyboards and mice?", source: getting-started/equipment.md, span: "GSA IT does not provide wireless peripherals", style: paraphrase}
+  - {q: "How long does my work iPhone passcode have to be?", source: getting-started/equipment.md, span: "longer than 14 characters and contain both letters and numbers", style: lexical}
+  - {q: "My stolen laptop was found and returned to me. Can I keep using it?", source: getting-started/equipment.md, span: "it may have been tampered with and should not be used", style: paraphrase}
+  - {q: "Can I get a printer for working from home?", source: getting-started/equipment.md, span: "A separate justification process is required for printer requests", style: paraphrase}
+  - {q: "How do I get Xcode command line tools on my GSA Mac?", source: getting-started/equipment.md, span: "XCode command line tools can be installed or upgraded through", style: lexical}
+  - {q: "How often must I change my ENT password?", source: getting-started/how-to-log-in.md, span: "every 90 days thereafter", style: lexical}
+  - {q: "What does my enterprise account username look like?", source: getting-started/how-to-log-in.md, span: "FirstnameMiddleinitialLastname", style: paraphrase}
+  - {q: "On the ENT sign-in page, should I pick public or private computer?", source: getting-started/how-to-log-in.md, span: "You should always select \"This is a private compu", style: lexical}
+  - {q: "How many old passwords am I blocked from reusing on my Mac?", source: getting-started/how-to-log-in.md, span: "last 24 passwords may not be reused", style: paraphrase}
+  - {q: "What permissions can I grant when signing into a third-party app with my GSA Google account?", source: getting-started/how-to-log-in.md, span: "\"Basic Info\" or \"Limited Access to Data and Files\"", style: lexical}
+  - {q: "My Mac won't join the office wifi, what network can I use instead?", source: getting-started/how-to-log-in.md, span: "you may have to use the GSA Guest Wi-Fi", style: paraphrase}
+  - {q: "On which day of the week are new badges processed?", source: getting-started/piv.md, span: "GSA processes new badges every Wednesday", style: paraphrase}
+  - {q: "Why does my Mac ask for a PIN instead of a password?", source: getting-started/piv.md, span: "the prompt will change from \"password\" to \"PIN\"", style: lexical}
+  - {q: "Which certificate should I pick when a site asks me to choose one from my smart card?", source: getting-started/piv.md, span: "Choose the one that is **_only_** \"Digital Signature\"", style: paraphrase}
+  - {q: "I get 'SmartCard certificate is not trusted' after working fine for hours. Fix?", source: getting-started/piv.md, span: "cleaning the contact pad on the PIV with a pencil eraser", style: lexical}
+  - {q: "I left my badge at home, how can I log into my laptop today?", source: getting-started/piv.md, span: "temporarily enabling your computer to use a username and password", style: paraphrase}
+  - {q: "My card reader doesn't work through my USB-C hub. Why?", source: getting-started/piv.md, span: "The dongle may not provide enough juice", style: paraphrase}
+  - {q: "Which password manager does TTS recommend?", source: general-information-and-resources/tech-policies/password-requirements.md, span: "We recommend using [KeePassXC]", style: lexical}
+  - {q: "Where should I back up my password database?", source: general-information-and-resources/tech-policies/password-requirements.md, span: "sync it to Google Drive", style: paraphrase}
+  - {q: "What should I put as answers to account security questions?", source: general-information-and-resources/tech-policies/password-requirements.md, span: "random nonsense answers", style: lexical}
+  - {q: "Is it fine to reuse my Amazon password for work?", source: general-information-and-resources/tech-policies/password-requirements.md, span: "don't use your Amazon password as your ENT password", style: paraphrase}
+  - {q: "How can I come up with a strong password I can still remember?", source: general-information-and-resources/tech-policies/password-requirements.md, span: "a series of random words, plus a few numbers", style: paraphrase}
+  - {q: "I see weird activity on my computer, should I shut it down?", source: general-information-and-resources/tech-policies/security-incidents.md, span: "DO NOT turn off your computer", style: paraphrase}
+  - {q: "How quickly must a security incident be reported?", source: general-information-and-resources/tech-policies/security-incidents.md, span: "within 1 hour of suspected incident", style: lexical}
+  - {q: "What is the approved way to share sensitive files during an active incident?", source: general-information-and-resources/tech-policies/security-incidents.md, span: "GSA Google Drive is the only approved method of secure data transmission", style: lexical}
+  - {q: "I clicked a link in a suspicious email. Who do I email?", source: general-information-and-resources/tech-policies/security-incidents.md, span: "Send an email to itservicedesk@gsa.gov and devops@gsa.gov", style: paraphrase}
+  - {q: "What subject line should an incident report email have?", source: general-information-and-resources/tech-policies/security-incidents.md, span: "include _Security Incident_ in the subject line", style: lexical}
+  - {q: "I accidentally committed an API token to a public repo. Is that an incident?", source: general-information-and-resources/tech-policies/security-incidents.md, span: "Exposing a secret token in a GitHub repository", style: paraphrase}
+  - {q: "How many hours can responders spend fixing an incident without worrying about billing?", source: general-information-and-resources/tech-policies/security-incidents.md, span: "up to eight person-hours of work per incident", style: paraphrase}
+  - {q: "What tool stops me from pushing secrets to GitHub?", source: general-information-and-resources/sensitive-information.md, span: "Caulking checks for many common types of API tokens", style: paraphrase}
+  - {q: "Can IP addresses and AWS account IDs go in a repository?", source: general-information-and-resources/sensitive-information.md, span: "may be kept in a _private_ repository", style: lexical}
+  - {q: "How do I send an encrypted zip file and its password to a partner?", source: general-information-and-resources/sensitive-information.md, span: "Send the encrypted file and password to the recipient separately", style: lexical}
+  - {q: "A partner's mail server strips attachments, how else can I send them a file?", source: general-information-and-resources/sensitive-information.md, span: "MAX Drive](https://drive.max.gov/) is good for sending a one-off file", style: paraphrase}
+  - {q: "Is it OK to publish IAM role and group names?", source: general-information-and-resources/sensitive-information.md, span: "It's okay to publish IAM roles, policies, and group names", style: lexical}
+  - {q: "How do I check whether a piece of software is already approved at GSA?", source: general-information-and-resources/software.md, span: "Search the GSA IT Standards list", style: paraphrase}
+  - {q: "The tool I need is not approved yet. What is the first step?", source: general-information-and-resources/software.md, span: "submit a [Software Review Request (SRR)]", style: paraphrase}
+  - {q: "Where can I install desktop software myself without a ticket?", source: general-information-and-resources/software.md, span: "available in the Self Service Application, then you can directly install it yourself", style: paraphrase}
+  - {q: "What are the two web addresses for my GSA email?", source: tools/gmail.md, span: "https://email.gsa.gov", style: paraphrase}
+  - {q: "Can I get an email alias if I go by a different name?", source: tools/gmail.md, span: "You can create an alias to have a different email address", style: lexical}
+  - {q: "A third-party app wants access to my Google Drive. Should I allow it?", source: tools/google-drive.md, span: "don't grant OAuth access to GSA Google Drive", style: paraphrase}
+  - {q: "How do I share a file with all of TTS?", source: tools/google-drive.md, span: "adding [tts@gsa.gov](mailto:tts@gsa.gov) to the share list", style: lexical}
+  - {q: "Google Drive desktop app shows a can't load error", source: tools/google-drive.md, span: "If you get a \"can't load\" error, try [clearing the cache]", style: lexical}
+  - {q: "How do I get API access to Google Workspace?", source: tools/google-drive.md, span: "submit a [Generic Request in ServiceNow]", style: paraphrase}
+  - {q: "How do I sign in to the TTS Slack workspace?", source: tools/slack/getting-started.md, span: "Sign in with @gsa.gov email", style: lexical}
+  - {q: "Are chat messages subject to FOIA?", source: tools/slack/getting-started.md, span: "Everything written in Slack is potentially a federal", style: paraphrase}
+  - {q: "How do I set up Zoom on my laptop?", source: tools/zoom.md, span: "Click `Sign in with SSO`", style: lexical}
+  - {q: "My video meetings get cut off after 40 minutes, how do I fix that?", source: tools/zoom.md, span: "For meetings longer than 40 minutes", style: paraphrase}
+  - {q: "Should I use Zoom or Google Meet for regular internal meetings?", source: tools/zoom.md, span: "most GSA virtual meetings should be conducted in Google", style: paraphrase}
+  - {q: "What algorithm should I use when generating my commit signing key?", source: tools/git-signing.md, span: "We recommend using the ED25519 algorithm", style: paraphrase}
+  - {q: "Do commits made in the GitHub web editor need signing?", source: tools/git-signing.md, span: "The web interface automatically signs your work for you", style: paraphrase}
+  - {q: "How do I tell git to use SSH keys for signing?", source: tools/git-signing.md, span: "git config --global gpg.format ssh", style: lexical}
+  - {q: "GitHub shows my signed commits as Unverified, why?", source: tools/git-signing.md, span: "GitHub will mark them as `Unverified`", style: lexical}
+  - {q: "How do I run a Windows-only program on my Mac?", source: tools/virtual-desktop.md, span: "Citrix is the easiest way to use software that's available for Windows but not Mac", style: paraphrase}
+  - {q: "How do I move files between my laptop and the Citrix desktop?", source: tools/virtual-desktop.md, span: "To move files between your laptop and your Citrix desktop, use Google Drive", style: lexical}
+  - {q: "Can I use my personal Docker Hub account for work?", source: tools/docker-hub.md, span: "You may use your personal Docker Hub account for work", style: lexical}
+  - {q: "Under which organisation should I publish JavaScript packages?", source: tools/npm.md, span: "published under the [@gsa-tts]", style: paraphrase}
+  - {q: "I need Word and Excel just for today, what's the fastest way?", source: tools/office.md, span: "you can access it right away through [VDI]", style: paraphrase}
+out_of_scope:
+  # Real IT questions whose answer is NOT in either knowledge base -> must not be answered from the KB.
+  - {q: "How do I configure BGP peering on a Cisco ASR router?"}
+  - {q: "What is the default port for PostgreSQL replication?"}
+  - {q: "How do I fix a blue screen with error code IRQL_NOT_LESS_OR_EQUAL on Windows 11?"}
+  - {q: "How do I enroll a new Android phone in Microsoft Intune?"}
+  - {q: "What is the company's policy on cryptocurrency mining on work laptops?"}
+  - {q: "How do I request a second external monitor for the Bengaluru office?"}
+  - {q: "What is the Wi-Fi password for the guest network in the London office?"}
+  - {q: "How do I recover a deleted Jira project?"}
+  - {q: "How do I set up a Kubernetes ingress with TLS on EKS?"}
+  - {q: "How much RAM do the new developer laptops have?"}
+  - {q: "How do I rotate the root credentials of our Oracle database?"}
+  - {q: "What is the SLA for restoring a deleted mailbox from backup?"}
+  - {q: "How do I install Adobe Premiere Pro on Linux?"}
+  - {q: "Can I connect my Nintendo Switch to the office network?"}
+  - {q: "How do I configure Outlook rules to forward mail to my personal account?"}
+  - {q: "What is the maximum attachment size in Microsoft Teams chat?"}
+  - {q: "How do I get a parking permit for the head office?"}
+  - {q: "Which antivirus is installed on the point-of-sale terminals in stores?"}
+  - {q: "How do I reset the BIOS password on a Dell Latitude?"}
+  - {q: "What is the process to decommission a physical server in the data centre?"}
