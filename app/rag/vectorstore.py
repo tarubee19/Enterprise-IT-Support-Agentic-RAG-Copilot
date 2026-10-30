@@ -109,11 +109,29 @@ def get_vectorstore():
 
 
 
+_chunk_store = None
+
+
+def get_chunk_store():
+    global _chunk_store
+    if _chunk_store is None:
+        from app.rag.hybrid import ChunkStore
+        _chunk_store = ChunkStore(settings.chunk_store_path)
+    return _chunk_store
+
+
 def get_retriever():
+    if settings.retrieval_mode == "hybrid":
+        from app.rag.hybrid import HybridRetriever
+        dense = get_vectorstore().as_retriever(search_kwargs={"k": settings.retrieval_candidates})
+        return HybridRetriever(dense, get_chunk_store(), top_k=settings.top_k,
+                               candidates=settings.retrieval_candidates)
     return get_vectorstore().as_retriever(search_kwargs={"k": settings.top_k})
 
 
 
 def add_documents(chunks):
     store = get_vectorstore()
-    return store.add_documents(chunks)
+    ids = store.add_documents(chunks)
+    get_chunk_store().add(chunks)   # local copy for the BM25 side of hybrid retrieval
+    return ids
