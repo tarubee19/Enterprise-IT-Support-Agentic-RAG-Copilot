@@ -224,3 +224,5 @@ data/audit.db
 .vscode/
 uploads/*
 !uploads/.gitkeep
+eval/corpus/
+data/chunks.jsonl

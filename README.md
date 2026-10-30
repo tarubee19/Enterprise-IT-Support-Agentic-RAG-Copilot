@@ -43,6 +43,23 @@ to a trace that the UI shows next to the answer and that is stored in an SQLite 
 (900 characters, 120 overlap), embedded with `text-embedding-3-small` and stored in a Pinecone
 serverless index. New documents can be added from the UI through an admin-protected upload endpoint.
 
+## Evaluation
+
+There was no labelled evaluation set. There is one now: 76 answerable questions (42 of them paraphrased) and 20
+unanswerable ones, over the sample KB plus the real, public-domain 18F/TTS Handbook (242 pages, 2,286 chunks).
+Details and all numbers: **[eval/README.md](eval/README.md)**.
+
+| Retriever | Hit@4 | Hit@4 on paraphrased questions |
+|---|---|---|
+| BM25 | 0.671 | 0.476 |
+| TF-IDF | 0.711 | 0.571 |
+| Dense / hybrid / reranked | see `eval/results/retrieval_results.json` (GitHub Actions) | |
+
+* Keyword search misses half of the paraphrased questions, which is why dense retrieval is used.
+* A retrieval-score threshold cannot tell answerable from unanswerable questions (cross-validated accuracy 0.78
+  vs 0.79 for always answering), so refusals stay with the LLM evidence grader.
+* Retrieval is now **hybrid by default**: BM25 + Pinecone fused with reciprocal-rank fusion (`app/rag/hybrid.py`).
+
 ## Run it
 
 You need API keys for OpenAI, Pinecone and Tavily.
@@ -101,6 +118,7 @@ CI runs them on every push.
 app/
   rag/workflow.py       LangGraph agent: route, retrieve, grade, web search, rewrite, answer
   rag/vectorstore.py    OpenAI embeddings + Pinecone index and retriever
+  rag/hybrid.py         BM25 + dense reciprocal-rank fusion
   rag/state.py          typed agent state and structured-output schemas
   services/ingestion.py loaders for PDF / DOCX / TXT / MD and chunking
   services/audit.py     SQLite audit log of questions, routes and traces
@@ -108,14 +126,15 @@ app/
 templates/, static/     chat UI with the agent-trace panel
 data/sample_kb/         sample IT handbook and service-desk runbook (fictional company)
 notebooks/              the original notebook prototype of the agent
+eval/                   labelled questions, retrieval/refusal evaluation, results
 tests/                  pytest suite (runs in CI)
 ```
 
 ## Limitations and next steps
 
-* There is no labelled evaluation set yet. The next step is a set of questions with expected
-  sources, to measure retrieval hit rate, answer faithfulness, correct refusals and latency.
-* Retrieval is dense-only. Hybrid search (BM25 + embeddings) and a reranker are natural additions.
+* The labelled set measures retrieval and refusal. Answer faithfulness and end-to-end latency still need an
+  LLM-judge run with API keys.
+* The questions were written from the documents for this project, not taken from real help-desk logs.
 * The sample knowledge base describes a fictional company.
 
 ## License
