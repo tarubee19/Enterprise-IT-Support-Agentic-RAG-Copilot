@@ -1,0 +1,341 @@
+{
+  "corpus": {
+    "documents": 244,
+    "characters": 1483885,
+    "chunks_at_900": 2286
+  },
+  "n_in_scope": 76,
+  "n_out_of_scope": 20,
+  "chunking": {
+    "900": {
+      "chunks": 2284,
+      "BM25": 0.6710526315789473
+    },
+    "900 +headers": {
+      "chunks": 2669,
+      "BM25": 0.6842105263157895
+    }
+  },
+  "retrievers": {
+    "BM25": {
+      "hit1": {
+        "mean": 0.5526315789473685,
+        "ci95": [
+          0.4342105263157895,
+          0.6710526315789473
+        ]
+      },
+      "hit4": {
+        "mean": 0.6710526315789473,
+        "ci95": [
+          0.5657894736842105,
+          0.7763157894736842
+        ]
+      },
+      "mrr": {
+        "mean": 0.6042763157894736,
+        "ci95": [
+          0.5011979166666667,
+          0.7048355263157894
+        ]
+      },
+      "ndcg": {
+        "mean": 0.6267710533713288,
+        "ci95": [
+          0.5283115492741945,
+          0.7219847200740567
+        ]
+      },
+      "hit4_lexical": 0.9117647058823529,
+      "hit4_paraphrase": 0.47619047619047616,
+      "latency_ms_per_query": 6.088319577668843,
+      "misses_at_4": [
+        {
+          "q": "What is the minimum password length at NovaRetail?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "sample_kb/company_it_handbook.md"
+        },
+        {
+          "q": "I typed my password wrong several times and now I can't get in. Why?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/conflict-feedback-receiving-feedback.md"
+        },
+        {
+          "q": "Can I use text messages as my second factor?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "hiring-staying-or-changing-jobs/resume.md"
+        },
+        {
+          "q": "Will IT give me admin rights so I can install an app that isn't in the catalogue?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/conflict-feedback-additional-frameworks.md"
+        },
+        {
+          "q": "I left my work notebook computer on the train. What do I do?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "travel-and-leave/travel-and-leave-policies/travel-guide-faq.md"
+        },
+        {
+          "q": "Lots of people suddenly can't get their mail, should we ask them to reinstall Outlook?",
+          "gold": "sample_kb/service_desk_runbook.md",
+          "top1": "18f/how-18f-works/research-guidelines.md"
+        },
+        {
+          "q": "How urgent is a request where one person is stuck but has a partial workaround?",
+          "gold": "sample_kb/service_desk_runbook.md",
+          "top1": "getting-started/classes/intro-to-TTS-Tech-Portfolio.md"
+        },
+        {
+          "q": "Should I install macOS updates myself as soon as they come out?",
+          "gold": "getting-started/equipment.md",
+          "top1": "18f/how-18f-works/one-on-ones.md"
+        },
+        {
+          "q": "Can I borrow a temporary Windows machine from IT?",
+          "gold": "getting-started/equipment.md",
+          "top1": "tools/virtual-desktop.md"
+        },
+        {
+          "q": "My stolen laptop was found and returned to me. Can I keep using it?",
+          "gold": "getting-started/equipment.md",
+          "top1": "sample_kb/company_it_handbook.md"
+        },
+        {
+          "q": "What does my enterprise account username look like?",
+          "gold": "getting-started/how-to-log-in.md",
+          "top1": "18f/projects-partners/project-teams.md"
+        },
+        {
+          "q": "How many old passwords am I blocked from reusing on my Mac?",
+          "gold": "getting-started/how-to-log-in.md",
+          "top1": "travel-and-leave/travel-and-leave-policies/travel-guide-faq.md"
+        },
+        {
+          "q": "On which day of the week are new badges processed?",
+          "gold": "getting-started/piv.md",
+          "top1": "general-information-and-resources/employee-resources-policies/work-schedules.md"
+        },
+        {
+          "q": "Which certificate should I pick when a site asks me to choose one from my smart card?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/piv.md"
+        },
+        {
+          "q": "I left my badge at home, how can I log into my laptop today?",
+          "gold": "getting-started/piv.md",
+          "top1": "travel-and-leave/travel-and-leave-policies/travel-guide-faq.md"
+        },
+        {
+          "q": "How can I come up with a strong password I can still remember?",
+          "gold": "general-information-and-resources/tech-policies/password-requirements.md",
+          "top1": "general-information-and-resources/tech-policies/password-requirements.md"
+        },
+        {
+          "q": "I see weird activity on my computer, should I shut it down?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "travel-and-leave/travel-and-leave-policies/travel-guide-faq.md"
+        },
+        {
+          "q": "How quickly must a security incident be reported?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/tech-policies/security-incidents.md"
+        },
+        {
+          "q": "The tool I need is not approved yet. What is the first step?",
+          "gold": "general-information-and-resources/software.md",
+          "top1": "18f/chapters/product.md"
+        },
+        {
+          "q": "Where can I install desktop software myself without a ticket?",
+          "gold": "general-information-and-resources/software.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "What are the two web addresses for my GSA email?",
+          "gold": "tools/gmail.md",
+          "top1": "tools/google-groups.md"
+        },
+        {
+          "q": "How do I share a file with all of TTS?",
+          "gold": "tools/google-drive.md",
+          "top1": "tools/slack/getting-started.md"
+        },
+        {
+          "q": "Are chat messages subject to FOIA?",
+          "gold": "tools/slack/getting-started.md",
+          "top1": "about-us/centers-of-excellence/operations/onboarding.md"
+        },
+        {
+          "q": "How do I run a Windows-only program on my Mac?",
+          "gold": "tools/virtual-desktop.md",
+          "top1": "tools/virtual-desktop.md"
+        },
+        {
+          "q": "I need Word and Excel just for today, what's the fastest way?",
+          "gold": "tools/office.md",
+          "top1": "tools/office.md"
+        }
+      ]
+    },
+    "TF-IDF (word 1-2 grams)": {
+      "hit1": {
+        "mean": 0.5131578947368421,
+        "ci95": [
+          0.39473684210526316,
+          0.631578947368421
+        ]
+      },
+      "hit4": {
+        "mean": 0.7105263157894737,
+        "ci95": [
+          0.618421052631579,
+          0.8157894736842105
+        ]
+      },
+      "mrr": {
+        "mean": 0.6130482456140351,
+        "ci95": [
+          0.5207209429824562,
+          0.7090104166666666
+        ]
+      },
+      "ndcg": {
+        "mean": 0.6577924564943144,
+        "ci95": [
+          0.5715345619361996,
+          0.7502518166042481
+        ]
+      },
+      "hit4_lexical": 0.8823529411764706,
+      "hit4_paraphrase": 0.5714285714285714,
+      "latency_ms_per_query": 0.11308883365831877,
+      "misses_at_4": [
+        {
+          "q": "What is the minimum password length at NovaRetail?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "sample_kb/company_it_handbook.md"
+        },
+        {
+          "q": "I typed my password wrong several times and now I can't get in. Why?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "general-information-and-resources/conflict-feedback-receiving-feedback.md"
+        },
+        {
+          "q": "Can I use text messages as my second factor?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "tools/text-editors.md"
+        },
+        {
+          "q": "Will IT give me admin rights so I can install an app that isn't in the catalogue?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "I left my work notebook computer on the train. What do I do?",
+          "gold": "sample_kb/company_it_handbook.md",
+          "top1": "travel-and-leave/travel-and-leave-policies/travel-guide-a-amended-authorizations.md"
+        },
+        {
+          "q": "Lots of people suddenly can't get their mail, should we ask them to reinstall Outlook?",
+          "gold": "sample_kb/service_desk_runbook.md",
+          "top1": "tools/sharedcalendars.md"
+        },
+        {
+          "q": "Should I install macOS updates myself as soon as they come out?",
+          "gold": "getting-started/equipment.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "Can I borrow a temporary Windows machine from IT?",
+          "gold": "getting-started/equipment.md",
+          "top1": "tools/hrlinks.md"
+        },
+        {
+          "q": "Does GSA hand out wireless keyboards and mice?",
+          "gold": "getting-started/equipment.md",
+          "top1": "general-information-and-resources/washington-dc.md"
+        },
+        {
+          "q": "What does my enterprise account username look like?",
+          "gold": "getting-started/how-to-log-in.md",
+          "top1": "general-information-and-resources/employee-resources-policies/deaf-hoh.md"
+        },
+        {
+          "q": "Which certificate should I pick when a site asks me to choose one from my smart card?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/piv.md"
+        },
+        {
+          "q": "I left my badge at home, how can I log into my laptop today?",
+          "gold": "getting-started/piv.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "How can I come up with a strong password I can still remember?",
+          "gold": "general-information-and-resources/tech-policies/password-requirements.md",
+          "top1": "getting-started/equipment.md"
+        },
+        {
+          "q": "How quickly must a security incident be reported?",
+          "gold": "general-information-and-resources/tech-policies/security-incidents.md",
+          "top1": "general-information-and-resources/tech-policies/security-incidents.md"
+        },
+        {
+          "q": "The tool I need is not approved yet. What is the first step?",
+          "gold": "general-information-and-resources/software.md",
+          "top1": "tools/hrlinks.md"
+        },
+        {
+          "q": "Where can I install desktop software myself without a ticket?",
+          "gold": "general-information-and-resources/software.md",
+          "top1": "getting-started/classes/gsa-internal-tools.md"
+        },
+        {
+          "q": "What are the two web addresses for my GSA email?",
+          "gold": "tools/gmail.md",
+          "top1": "updating-the-handbook/updating-the-handbook.md"
+        },
+        {
+          "q": "How do I share a file with all of TTS?",
+          "gold": "tools/google-drive.md",
+          "top1": "tools/sharedcalendars.md"
+        },
+        {
+          "q": "How do I sign in to the TTS Slack workspace?",
+          "gold": "tools/slack/getting-started.md",
+          "top1": "tools/slack/guidelines.md"
+        },
+        {
+          "q": "Are chat messages subject to FOIA?",
+          "gold": "tools/slack/getting-started.md",
+          "top1": "about-us/centers-of-excellence/operations/collaboration.md"
+        },
+        {
+          "q": "How do I run a Windows-only program on my Mac?",
+          "gold": "tools/virtual-desktop.md",
+          "top1": "tools/virtual-desktop.md"
+        },
+        {
+          "q": "I need Word and Excel just for today, what's the fastest way?",
+          "gold": "tools/office.md",
+          "top1": "tools/office.md"
+        }
+      ]
+    }
+  },
+  "refusal": {
+    "BM25": {
+      "auc": 0.7236842105263158,
+      "cv_accuracy": 0.7783333333333334,
+      "majority_baseline": 0.7916666666666666
+    },
+    "TF-IDF (word 1-2 grams)": {
+      "auc": 0.7190789473684212,
+      "cv_accuracy": 0.7658333333333333,
+      "majority_baseline": 0.7916666666666666
+    }
+  },
+  "paired_tests": {
+    "TF-IDF (word 1-2 grams) vs BM25 (hit@4)": 0.46585341465853414
+  }
+}
