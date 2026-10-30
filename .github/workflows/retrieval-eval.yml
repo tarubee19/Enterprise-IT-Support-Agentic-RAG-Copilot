@@ -1,0 +1,41 @@
+name: Retrieval evaluation
+
+# Runs the labelled retrieval / refusal evaluation (eval/README.md) with open embedding models
+# from Hugging Face and commits eval/results/. Triggered when the evaluation code or labels change.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["eval/retrieval_eval.py", "eval/questions.yaml", ".github/workflows/retrieval-eval.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install (CPU torch)
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install sentence-transformers rank-bm25 langchain-text-splitters pyyaml scikit-learn
+      - name: Corpus (18F/TTS Handbook, CC0, pinned commit)
+        run: python eval/fetch_corpus.py
+      - name: Evaluate
+        run: |
+          python eval/retrieval_eval.py --out eval/results \
+            --dense BAAI/bge-small-en-v1.5 sentence-transformers/all-MiniLM-L6-v2 BAAI/bge-base-en-v1.5 intfloat/e5-base-v2 \
+            --rerank BAAI/bge-reranker-base
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add eval/results
+          if git diff --cached --quiet; then echo "Nothing changed."; exit 0; fi
+          git commit -m "eval: retrieval evaluation results"
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
